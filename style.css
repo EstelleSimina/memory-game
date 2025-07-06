@@ -1,0 +1,70 @@
+body {
+  margin: 0; /* important pour éviter les marges par défaut */
+  font-family: sans-serif;
+  background-image: url("assets/background/easy_bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+  background-attachment: fixed; /* optionnel : pour effet fixe */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 105vh;
+}
+
+/* Niveau 1 : 3 paires = 6 cartes → grille 3 x 2 */
+.board-easy {
+  grid-template-columns: repeat(3, 100px);
+}
+
+/* Niveau 2 : 6 paires = 12 cartes → grille 6 x 2 */
+.board-medium {
+  grid-template-columns: repeat(6, 100px);
+}
+
+/* Niveau 3 : 10 paires = 20 cartes → grille 6 x 4 */
+.board-hard {
+  grid-template-columns: repeat(6, 100px);
+}
+
+
+#game-board {
+  display: grid;
+  gap: 10px;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.02); /* glassmorphisme*/
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(65, 65, 65, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.card {
+  width: 100px;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 8px;
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+
+
+
+.card.flipped {
+  background-color: #fff;
+  color: #111;
+  font-weight: bold;
+}
