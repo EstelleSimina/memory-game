@@ -1,2 +1,0 @@
-"use strict";
-//rajoute du style avec TS (je vais privilégier le CSS)
