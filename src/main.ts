@@ -18,10 +18,10 @@ function bodyBackground(pairsCount:number): void {
 
 window.addEventListener("DOMContentLoaded", () => {
   const board = new Board("game-board");  // l’id de la div dans HTML
-  const pairsCount = 3;
+  const pairsCount = 6;
   bodyBackground(pairsCount); // 🔹 Applique le bon fond
   
-  board.start(3); // Démarre avec n paires 
+  board.start(6); // Démarre avec n paires 
 });
 
 //gérer la taille de mes cartes en fonction du nombres de paires

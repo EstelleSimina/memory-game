@@ -13,8 +13,19 @@ export class Board {
     }
 
     //fonction qui mélange les éléments de manière aléatoire du tableau 
-    shuffle(array: string[]): string[] {
-        return array.sort(() => Math.random() - 0.5);
+    shuffle(array: any[]) {
+        let currentIndex: number = array.length;
+        let temporaryValue: any;
+        let randomIndex: number;
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
     }
 
     start(pairsCount: number): void {

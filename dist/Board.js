@@ -10,7 +10,17 @@ export class Board {
     }
     //fonction qui mélange les éléments de manière aléatoire du tableau 
     shuffle(array) {
-        return array.sort(() => Math.random() - 0.5);
+        let currentIndex = array.length;
+        let temporaryValue;
+        let randomIndex;
+        while (currentIndex !== 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+        return array;
     }
     start(pairsCount) {
         this.boardElement.innerHTML = ""; // Vide le plateau au départ
