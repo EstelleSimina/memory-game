@@ -7,7 +7,7 @@ export class Card {
   isFound: boolean = false; //Indique si la carte a été trouvée (fait partie d'une paire déjà découverte)
 
   constructor(value: string) {
-    this.value = value;
+    this.value = value; //value renomme en imgrsc 
 
     // Crée l'élement principal
     this.element = document.createElement("div");
@@ -15,7 +15,7 @@ export class Card {
 
     // Crée l'image (face cachée)
     this.imgElement = document.createElement("img");
-    this.imgElement.src = "assets/card_back/card_back_arcane.png"; //The ID of the image to use for the card.
+    this.imgElement.src = "assets/card_back/card_back_arcane.png"; 
     this.imgElement.className= "card-img";
 
     this.element.appendChild(this.imgElement);

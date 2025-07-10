@@ -3,13 +3,13 @@ export class Card {
     constructor(value) {
         this.isFlipped = false; //Indique si la carte est actuellement retournée (face visible)
         this.isFound = false; //Indique si la carte a été trouvée (fait partie d'une paire déjà découverte)
-        this.value = value;
+        this.value = value; //value renomme en imgrsc 
         // Crée l'élement principal
         this.element = document.createElement("div");
         this.element.className = "card";
         // Crée l'image (face cachée)
         this.imgElement = document.createElement("img");
-        this.imgElement.src = "assets/card_back/card_back_arcane.png"; //The ID of the image to use for the card.
+        this.imgElement.src = "assets/card_back/card_back_arcane.png";
         this.imgElement.className = "card-img";
         this.element.appendChild(this.imgElement);
     }

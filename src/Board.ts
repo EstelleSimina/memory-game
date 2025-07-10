@@ -1,5 +1,5 @@
 //plateau du jeu, gestion des cartes 
-import { Card } from "./Card.js";
+import { Card } from "./Card.js"; //.ts
 
 export class Board {
     cards: Card [] = [];
@@ -13,7 +13,7 @@ export class Board {
     }
 
     //fonction qui mélange les éléments de manière aléatoire du tableau 
-    shuffle(array: any[]) {
+    shuffle(array: string[]) {
         let currentIndex: number = array.length;
         let temporaryValue: any;
         let randomIndex: number;
@@ -31,15 +31,7 @@ export class Board {
     start(pairsCount: number): void {
         this.boardElement.innerHTML = "";    // Vide le plateau au départ
         this.boardElement.classList.remove("board-easy", "board-medium", "board-hard");
-        if (pairsCount === 3 || pairsCount === 6) {
-            this.boardElement.classList.add("board-easy");
-        } 
-        if (pairsCount === 10 || pairsCount === 15) {
-            this.boardElement.classList.add("board-medium");
-        } 
-        if (pairsCount === 22) {
-            this.boardElement.classList.add("board-hard");
-        }
+       
 
     const values: string[] = [];
     for (let i = 1; i <= pairsCount; i++) {
@@ -55,6 +47,17 @@ export class Board {
         const card = new Card(value);
         // Ajout du clic on appelle handleCardClick
         card.element.addEventListener("click", () => this.handleCardClick(card));
+
+         if (pairsCount === 3 || pairsCount === 6) {
+            card.element.classList.add("card-size-easy");
+        } 
+        if (pairsCount === 10 || pairsCount === 15) {
+            card.element.classList.add("card-size-medium");
+        } 
+        if (pairsCount === 22) {
+            card.element.classList.add("card-size-hard");
+        }
+
         this.cards.push(card);
         this.boardElement.appendChild(card.element);
     });
