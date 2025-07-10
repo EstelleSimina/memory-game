@@ -1,48 +1,36 @@
 import { Board } from "./Board.js";
 
-function bodyBackground(pairsCount:number): void {
-  const body = document.body; // sélectionne la balise <body>
-  body.classList.remove("body-easy", "body-medium", "body-hard"); // on enlève toutes les anciennes classes
-  if (pairsCount === 3 || pairsCount === 6) {
-    body.classList.add("body-easy");
-  }
-  if (pairsCount === 10 || pairsCount === 15) {
-  body.classList.add("body-medium");
-  }
-  if (pairsCount === 22) {
-    body.classList.add("body-hard");
-  }
-}
-
 const levels = [
   {pairs : 3, className: "body-easy"},
   {pairs : 6, className: "body-easy"},
-  {pairs : 10, className: "body-medium"},
+  {pairs : 9, className: "body-medium"},
+  {pairs : 12, className: "body-hard"},
   {pairs : 15, className: "body-hard"},
-  {pairs : 22, className: "body-hard"},
 ];
 
 let currentLevelIndex = 0;
+
+const startBtn = document.getElementById("start-button")!;
+const menu = document.getElementById("main-menu")!;
+const boardElement = document.getElementById("game-board")!;
+
 const board = new Board("game-board"); // Crée le plateau une fois
 
-function launchLevel(): void{
+
+// 🟢 Lance un niveau
+function launchLevel(): void {
   const level = levels[currentLevelIndex];
-  const body = document.body;
 
-  // Nettoie les anciennes classes
-  body.classList.remove("body-easy", "body-medium", "body-hard");
+  // Applique la classe CSS selon le nombre de paires
+  bodyBackground(level.pairs);
 
-  // Ajoute la classe correspondant au niveau
-  body.classList.add(level.className);
-
-  // fonction pour générer le plateau
+  // Génère le plateau
   board.start(level.pairs);
 }
 
-// Quand on gagne un niveau
-function goToNextLevel(): void {
+// Quand le joueur gagne un niveau
+export function goToNextLevel(): void {
   currentLevelIndex++;
-
   if (currentLevelIndex < levels.length) {
     launchLevel();
   } else {
@@ -50,20 +38,39 @@ function goToNextLevel(): void {
   }
 }
 
+// Message de fin
 function showVictoryMessage(): void {
-  alert("message jeu terminé, félicitation!");
-  // bouton retour au menu ou recharger la page
+  alert("🎉 Jeu terminé, félicitations !");
+  // Ici, tu peux aussi proposer un bouton "Retour au menu" ou "Rejouer"
 }
 
 
-window.addEventListener("DOMContentLoaded", () => {
-  launchLevel()
-  board.start(3); // Démarre avec n paires 
+function bodyBackground(pairsCount:number): void {
+  const body = document.body; // sélectionne la balise <body>
+  body.classList.remove("body-easy", "body-medium", "body-hard"); // on enlève toutes les anciennes classes
+  if (pairsCount === 3 || pairsCount === 6) {
+    body.classList.add("body-easy");
+  }
+  if (pairsCount === 9 || pairsCount === 12) {
+  body.classList.add("body-medium");
+  }
+  if (pairsCount === 15) {
+    body.classList.add("body-hard");
+  }
+}
+
+
+// ▶️ Démarrage au clic sur "Start"
+startBtn.addEventListener("click", () => {
+  menu.style.display = "none";
+  boardElement.style.display = "grid"; // ou "flex", selon ton CSS
+  launchLevel(); // démarre le premier niveau
 });
 
-//gérer la taille de mes cartes en fonction du nombres de paires
-// peu de paires => plus grandes cartes 
-
+// 🚀 Démarrage automatique si besoin
+window.addEventListener("DOMContentLoaded", () => {
+  // rien à faire ici si tu veux attendre le clic sur Start
+});
 
 
 

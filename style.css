@@ -36,6 +36,10 @@ body.body-hard {
   background-attachment: fixed;
 }
 
+
+
+
+
 #game-board {
   display: grid;
   grid-template-columns: repeat(6, auto);

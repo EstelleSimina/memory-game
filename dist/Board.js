@@ -1,5 +1,6 @@
 //plateau du jeu, gestion des cartes 
 import { Card } from "./Card.js"; //.ts
+import { goToNextLevel } from "./main.js";
 export class Board {
     constructor(boardId) {
         this.cards = [];
@@ -39,10 +40,10 @@ export class Board {
             if (pairsCount === 3 || pairsCount === 6) {
                 card.element.classList.add("card-size-easy");
             }
-            if (pairsCount === 10 || pairsCount === 15) {
+            if (pairsCount === 9 || pairsCount === 12) {
                 card.element.classList.add("card-size-medium");
             }
-            if (pairsCount === 22) {
+            if (pairsCount === 15) {
                 card.element.classList.add("card-size-hard");
             }
             this.cards.push(card);
@@ -64,6 +65,12 @@ export class Board {
                 this.firstCard.markAsFound();
                 this.secondCard.markAsFound();
                 this.resetSelection();
+                const allFound = this.cards.every((card) => card.isFound); //vérifie si toutes les paires sont trouvées
+                if (allFound) {
+                    setTimeout(() => {
+                        goToNextLevel();
+                    }, 1000);
+                }
             }
             else {
                 // mauvaise paire
