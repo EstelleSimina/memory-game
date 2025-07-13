@@ -8,13 +8,25 @@
 </head>
 
 <body>
-
-  <div id="main-menu">
-    <h1>Arcane Memory</h1>
-    <button id="start-button">Jouer</button>
+  <div id="menu-container">
+    <div id="main-menu">
+      <h1>Memory Game</h1>
+      <h2>Règles du jeu :</h2>
+      <ol>
+        <li>Toutes les cartes sont placées face cachée sur le plateau de jeu.</li>
+        <li>À chaque tour, vous pouvez retourner deux cartes.</li>
+        <li>Si les deux cartes retournées sont identiques, elles restent face visible.</li>
+        <li>Si les deux cartes retournées sont différentes, elles sont à nouveau retournées face cachée après un court délai.</li>
+        <li>Le jeu continue jusqu'à ce que toutes les paires aient été trouvées.</li>
+      </ol>
+      <button id="start-button">Jouer</button>
+    </div>
   </div>
 
-  <div id="game-board"></div>
+  <div id="game-container">
+    <div id="game-board"></div>
+  </div>
+
   <script type="module" src="./dist/main.js"></script>
 </body>
 </html>

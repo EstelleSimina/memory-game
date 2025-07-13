@@ -1,12 +1,19 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden; /* pas la meilleure façon de faire à revoir*/
+  height: 100%;
+}
+
+
+/* body */ 
 body {
-  margin: 0; /* important pour éviter les marges par défaut */
   font-family: sans-serif;
   background-image: url("assets/background/menu_bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size:cover;
-  background-attachment: fixed; 
-  display: flex;
+  background-attachment: fixed;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -37,11 +44,42 @@ body.body-hard {
 }
 
 
+/* menu */ 
+#menu-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh; /* Tu ajustes ici la position verticale du menu */
+}
+
+#main-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem 3rem;
+  /* style glassmorphisme*/
+  background: rgba(255, 255, 255, 0.02); 
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.404);
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(65, 65, 65, 0.1);
+  color: white;
+}
 
 
+/* board */ 
+/* Conteneur du plateau de jeu */
+#game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* pour centrer si besoin */
+}
 
 #game-board {
-  display: grid;
+  display: none;
   grid-template-columns: repeat(6, auto);
   box-sizing: border-box;
   gap: 10px;
@@ -64,13 +102,15 @@ body.body-hard {
 }
 
 .board-medium {
-  grid-template-columns: repeat(6, auto);
+  grid-template-columns: repeat(8, auto);
 }
 
 .board-hard {
-  grid-template-columns: repeat(5, auto); 
+  grid-template-columns: repeat(8, auto); 
 }
 
+
+/* card */ 
 
 .card-size-easy {
   width: 130px;

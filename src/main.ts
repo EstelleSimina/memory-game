@@ -17,11 +17,11 @@ const boardElement = document.getElementById("game-board")!;
 const board = new Board("game-board"); // Crée le plateau une fois
 
 
-// 🟢 Lance un niveau
+// lance un niveau
 function launchLevel(): void {
   const level = levels[currentLevelIndex];
 
-  // Applique la classe CSS selon le nombre de paires
+  // applique la classe CSS selon le nombre de paires
   bodyBackground(level.pairs);
 
   // Génère le plateau
@@ -38,10 +38,9 @@ export function goToNextLevel(): void {
   }
 }
 
-// Message de fin
+// message de fin
 function showVictoryMessage(): void {
   alert("🎉 Jeu terminé, félicitations !");
-  // Ici, tu peux aussi proposer un bouton "Retour au menu" ou "Rejouer"
 }
 
 
