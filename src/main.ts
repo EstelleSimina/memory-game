@@ -5,7 +5,7 @@ const levels = [
   {pairs : 6, className: "body-easy"},
   {pairs : 9, className: "body-medium"},
   {pairs : 12, className: "body-hard"},
-  {pairs : 15, className: "body-hard"},
+  {pairs : 16, className: "body-hard"},
 ];
 
 let currentLevelIndex = 0;
@@ -16,11 +16,31 @@ const boardElement = document.getElementById("game-board")!;
 
 const board = new Board("game-board"); // Crée le plateau une fois
 
+function updateBoardClass(pairsCount: number): void {
+  const boardElement = document.getElementById("game-board")!;
+  boardElement.classList.remove("board-easy-3", "board-easy-6", "board-medium-9", "board-medium-12","board-hard");
+
+  if (pairsCount === 3)  {
+    boardElement.classList.add("board-easy-3");
+  }
+  if (pairsCount === 6){
+    boardElement.classList.add("board-easy-6");
+  }
+  if (pairsCount === 9){
+    boardElement.classList.add("board-medium-9");
+  }
+  if (pairsCount === 12) {
+    boardElement.classList.add("board-medium-12");
+  }
+  if (pairsCount === 16) {
+    boardElement.classList.add("board-hard");
+  }
+}
 
 // lance un niveau
 function launchLevel(): void {
   const level = levels[currentLevelIndex];
-
+  updateBoardClass(level.pairs);
   // applique la classe CSS selon le nombre de paires
   bodyBackground(level.pairs);
 
@@ -53,23 +73,21 @@ function bodyBackground(pairsCount:number): void {
   if (pairsCount === 9 || pairsCount === 12) {
   body.classList.add("body-medium");
   }
-  if (pairsCount === 15) {
+  if (pairsCount === 16) {
     body.classList.add("body-hard");
   }
 }
 
 
-// ▶️ Démarrage au clic sur "Start"
+// démarrage au clic sur "Start"
 startBtn.addEventListener("click", () => {
   menu.style.display = "none";
   boardElement.style.display = "grid"; // ou "flex", selon ton CSS
   launchLevel(); // démarre le premier niveau
 });
 
-// 🚀 Démarrage automatique si besoin
-window.addEventListener("DOMContentLoaded", () => {
-  // rien à faire ici si tu veux attendre le clic sur Start
-});
+// démarrage automatique si besoin
+window.addEventListener("DOMContentLoaded", () => {});
 
 
 

@@ -1,7 +1,7 @@
 body, html {
   margin: 0;
   padding: 0;
-  overflow-y: hidden; /* pas la meilleure façon de faire à revoir*/
+  overflow-y: hidden;  /*pas la meilleure façon de faire à revoir*/
   height: 100%;
 }
 
@@ -43,6 +43,63 @@ body.body-hard {
   background-attachment: fixed;
 }
 
+.title_game, .title_rules, ul {
+  margin-top: 0;
+  margin-bottom: 1rem; /* ou moins si tu veux resserrer */
+}
+
+.title_game{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3.5rem;
+  letter-spacing: 3px;
+  color: #e0c8ff;
+  text-shadow:
+    0 0 8px #7c5ca1, 
+    0 0 20px #7c5ca1, 
+    0 0 30px #5a3a7e; 
+  margin-bottom: 1rem;
+}
+
+.title_rules{
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: #d0b3ff;
+  margin: 0 0 1rem 0;
+  text-shadow: 0 0 6px #5a3a7e;
+}
+
+
+ul {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  border-radius: 12px;
+  list-style: none;
+  padding: 0.6rem 1.5rem;
+  color: #d0b3ff;
+}
+
+
+#start-button {
+ font-family: 'VT323', monospace;
+  font-size: 1.4rem;
+  padding: 12px 24px;
+  border: 2px solid #5a3a7e; 
+  background-color: rgba(20, 15, 35, 0.85); 
+  color: #d0b3ff; 
+  text-shadow: 0 0 2px #7c5ca1;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(87, 50, 139, 0.3); 
+}
+
+#start-button:hover {
+  background-color: #2f1f47; 
+  color: #f3eaff;
+  text-shadow: 0 0 3px #bba2e5;
+  box-shadow: 0 0 12px rgba(122, 77, 194, 0.4);
+}
 
 /* menu */ 
 #menu-container {
@@ -57,14 +114,13 @@ body.body-hard {
   align-items: center; 
   flex-direction: column;
   text-align: center;
-  padding: 2rem 3rem;
+  padding: 2.4rem 5.5rem;
   /* style glassmorphisme*/
-  background: rgba(255, 255, 255, 0.02); 
+  background: rgba(47, 0, 92, 0.08);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.404);
   backdrop-filter: blur(2.5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(65, 65, 65, 0.1);
+  border: 1px solid rgba(97, 62, 126, 0.192);
   color: white;
 }
 
@@ -78,16 +134,16 @@ body.body-hard {
   min-height: 100vh; /* pour centrer si besoin */
 }
 
+
+
 #game-board {
   display: none;
-  grid-template-columns: repeat(6, auto);
   box-sizing: border-box;
   gap: 10px;
   padding: 10px;
   margin: auto;
   width: auto; 
   justify-content: center;
-
   /* style glassmorphisme*/
   background: rgba(255, 255, 255, 0.02); 
   border-radius: 16px;
@@ -97,11 +153,20 @@ body.body-hard {
   border: 1px solid rgba(65, 65, 65, 0.1);
 }
 
-.board-easy {
+
+.board-easy-3 {
   grid-template-columns: repeat(3, auto);
 }
 
-.board-medium {
+.board-easy-6 {
+  grid-template-columns: repeat(6, auto);
+}
+
+.board-medium-9 {
+  grid-template-columns: repeat(6, auto);
+}
+
+.board-medium-12 {
   grid-template-columns: repeat(8, auto);
 }
 

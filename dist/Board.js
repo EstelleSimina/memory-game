@@ -25,7 +25,6 @@ export class Board {
     }
     start(pairsCount) {
         this.boardElement.innerHTML = ""; // Vide le plateau au départ
-        this.boardElement.classList.remove("board-easy", "board-medium", "board-hard");
         const values = [];
         for (let i = 1; i <= pairsCount; i++) {
             values.push(`assets/card_arcane/card${i}.png`);
@@ -43,7 +42,7 @@ export class Board {
             if (pairsCount === 9 || pairsCount === 12) {
                 card.element.classList.add("card-size-medium");
             }
-            if (pairsCount === 15) {
+            if (pairsCount === 16) {
                 card.element.classList.add("card-size-hard");
             }
             this.cards.push(card);
