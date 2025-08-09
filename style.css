@@ -105,7 +105,7 @@ ul {
 #menu-container {
   display: flex;
   justify-content: center;
-  margin-top: 5vh; /* Tu ajustes ici la position verticale du menu */
+  margin-top: 5vh; 
 }
 
 #main-menu {

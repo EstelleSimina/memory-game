@@ -60,7 +60,7 @@ export function goToNextLevel(): void {
 
 // message de fin
 function showVictoryMessage(): void {
-  alert("🎉 Jeu terminé, félicitations !");
+  alert("Bravo d'être arrivé.e jusqu'au bout!");
 }
 
 
@@ -82,8 +82,8 @@ function bodyBackground(pairsCount:number): void {
 // démarrage au clic sur "Start"
 startBtn.addEventListener("click", () => {
   menu.style.display = "none";
-  boardElement.style.display = "grid"; // ou "flex", selon ton CSS
-  launchLevel(); // démarre le premier niveau
+  boardElement.style.display = "grid";
+  launchLevel();
 });
 
 // démarrage automatique si besoin
