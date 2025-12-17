@@ -4,7 +4,7 @@
 
 ---
 
-## 🔎 Présentation
+## Présentation
 
 <p align="center">
   <img src="assets/screen/screen_memory.png" alt="Aperçu du jeu Memory Game - Arcane" width="600">
@@ -17,7 +17,7 @@ Ce Memory Game est inspiré de l'univers d'**Arcane**. Il s'agit d'un petit jeu 
 
 ---
 
-## 🎮 Règles du jeu
+## Règles du jeu
 
 - Toutes les cartes sont placées face cachée sur le plateau de jeu.
 - À chaque tour, vous pouvez retourner deux cartes.
@@ -30,7 +30,7 @@ Ce Memory Game est inspiré de l'univers d'**Arcane**. Il s'agit d'un petit jeu 
 
 ---
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
 - Thème visuel inspiré de l'univers d'Arcane.
 - Animations d'ouverture et fermeture des cartes.
@@ -39,7 +39,7 @@ Ce Memory Game est inspiré de l'univers d'**Arcane**. Il s'agit d'un petit jeu 
 
 ---
 
-## 🧰 Stack technique
+## Stack technique
 
 - HTML5 sémantique
 - CSS3 (Flexbox / Grid)
@@ -50,7 +50,7 @@ Ce Memory Game est inspiré de l'univers d'**Arcane**. Il s'agit d'un petit jeu 
 
 ---
 
-## 📁 Structure du projet
+## Structure du projet
 
 ```
 
@@ -70,7 +70,7 @@ brief_3/
 ````
 ---
 
-## 📜 Mentions légales
+## Mentions légales
 
 Ce projet est une création **fan-made à but éducatif uniquement**.
 
